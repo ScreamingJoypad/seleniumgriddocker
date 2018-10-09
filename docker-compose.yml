@@ -16,7 +16,8 @@ services:
       - HUB_HOST=selenium-hub
       - HUB_PORT=4444 
     volumes:
-    - "/dev/shm:/dev/shm"  
+      - /dev/shm:/dev/shm 
+      - /home/qa/Downloads:/home/seluser/Downloads 
   firefox:
     image: selenium/node-firefox:3.14.0-dubnium
     depends_on:
@@ -25,3 +26,6 @@ services:
     environment:
       - HUB_HOST=selenium-hub
       - HUB_PORT=4444
+    volumes:
+      - /dev/shm:/dev/shm 
+      - /home/qa/Downloads:/home/seluser/Downloads 
